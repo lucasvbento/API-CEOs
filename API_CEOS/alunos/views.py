@@ -2,12 +2,15 @@ from rest_framework import generics
 from .models import Aluno
 from .serializers import AlunoSerializer
 
+
+#View com funçao GET e POST
 class AlunosAPIView(generics.ListCreateAPIView):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer  
     
 
     def get(self, request, *args, **kwargs):
+        #Printar requisiçoes como pedido
         print(f"[GET] Listando alunos - {request.method} {request.path}")
         return super().get(request, *args, **kwargs)
 
@@ -17,7 +20,7 @@ class AlunosAPIView(generics.ListCreateAPIView):
 
 
 
-
+#View com funçao PUT , DELETE e GET
 class AlunoAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer

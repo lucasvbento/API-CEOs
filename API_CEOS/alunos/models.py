@@ -1,5 +1,6 @@
 from django.db import models
 
+#criando modelo base do banco de dados
 class Base(models.Model):
     criacao = models.DateTimeField(auto_now_add=True)
     atualizacao = models.DateTimeField(auto_now=True)
@@ -9,7 +10,7 @@ class Base(models.Model):
         abstract = True
 
 
-
+#Criando modelo de alunos no banco de dados
 class Aluno(Base):
     nome = models.CharField(max_length=200)
     matricula = models.IntegerField()
