@@ -1,6 +1,8 @@
 from django.db import models
 
-#criando modelo base do banco de dados
+# Criando o modelo base para outras tabelas do banco de dados
+# A classe Base define campos comuns para todas as outras classes de modelo, como data de criação, data de atualização e status de ativo.
+# Este modelo é abstrato, ou seja, não será usado diretamente no banco de dados, mas sim herdado por outros modelos.
 class Base(models.Model):
     criacao = models.DateTimeField(auto_now_add=True)
     atualizacao = models.DateTimeField(auto_now=True)
@@ -10,7 +12,9 @@ class Base(models.Model):
         abstract = True
 
 
-#Criando modelo de alunos no banco de dados
+# Criando o modelo de alunos no banco de dados
+# A classe Aluno herda de Base, adicionando campos específicos para o registro de alunos.
+# Este modelo será utilizado para armazenar informações de alunos no banco de dados.
 class Aluno(Base):
     nome = models.CharField(max_length=200)
     matricula = models.IntegerField()
