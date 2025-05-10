@@ -24,3 +24,9 @@ Este projeto é uma API RESTful simples desenvolvida com **Django** e **Django R
 - Git & GitHub
 
 ---
+
+## Para testar o projeto:
+- clone o repositorio
+- faça um ambiente virtual e use o comando "pip install -r API_CEOS\requirements.txt" para instalar os pacotes necessarios
+- use o comando "python manage.py runserver" e entre neste link http://127.0.0.1:8000/api/v1/alunos/ para ver a api funcionando
+- use o comando "python manage.py test" para rodar os testes da pasta test.py
